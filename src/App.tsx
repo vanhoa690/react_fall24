@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ClientLayout from "./layouts/ClientLayout";
+// import ClientAntdLayout from "./layouts/ClientAntdLayout";
 
 function App() {
   const routeConfig = [

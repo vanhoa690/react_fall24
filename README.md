@@ -6,3 +6,4 @@
   ]
 - main: BrowserRouter (App)
 - Components: Header, Footer, ProductCard, ProductList
+- Su dung Link to, ko bi load lai trang
