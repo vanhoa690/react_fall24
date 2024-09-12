@@ -1,7 +1,9 @@
+import { Typography } from "antd";
+
 export default function About() {
   return (
     <div className="container">
-      <h1>About</h1>
+      <Typography.Title style={{ textAlign: "center" }}>About</Typography.Title>
     </div>
   );
 }

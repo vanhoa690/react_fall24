@@ -2,6 +2,7 @@ import { useRoutes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import About from "./pages/About";
 import ClientLayout from "./layouts/ClientLayout";
+import "antd/dist/reset.css";
 
 const routeConfig = [
   {
