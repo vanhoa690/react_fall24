@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        Hoadv - React
-      </a>
+      <Link className="navbar-brand" to="/antd">
+        Antd
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -40,20 +40,6 @@ export function Header() {
             </Link>
           </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
       </div>
     </nav>
   );

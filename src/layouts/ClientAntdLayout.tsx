@@ -26,7 +26,7 @@ export default function ClientAntdLayout() {
   const nav = useNavigate();
   const handleClick = (item: { key: string }) => {
     console.log(item);
-    nav(`/${item.key}`);
+    nav(`/antd/${item.key}`);
   };
   return (
     <Layout style={{ minHeight: "100vh" }}>

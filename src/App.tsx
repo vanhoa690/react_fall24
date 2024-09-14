@@ -4,7 +4,8 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ClientLayout from "./layouts/ClientLayout";
-// import ClientAntdLayout from "./layouts/ClientAntdLayout";
+import ClientAntdLayout from "./layouts/ClientAntdLayout";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const routeConfig = [
@@ -16,13 +17,26 @@ function App() {
         { path: "/about", element: <About /> },
       ],
     },
+    {
+      path: "antd",
+      element: <ClientAntdLayout />,
+      children: [
+        { path: "", element: <Homepage /> },
+        { path: "about", element: <About /> },
+      ],
+    },
     { path: "/login", element: <Login /> },
     { path: "/register", element: <Register /> },
   ];
 
   const routes = useRoutes(routeConfig);
 
-  return <main>{routes}</main>;
+  return (
+    <main>
+      {routes}
+      <Toaster />
+    </main>
+  );
 }
 
 export default App;
