@@ -3,6 +3,7 @@ import { getAllProduct, getProductDetail } from "../services/product";
 import toast from "react-hot-toast";
 import { AxiosError } from "axios";
 import { useParams } from "react-router-dom";
+import { Image } from "antd";
 
 type Product = {
   id: string;
@@ -31,7 +32,11 @@ export default function ProductDetail() {
       {product && (
         <div className="row">
           <div className="col">
-            <img src={product.image} className="card-img-top" alt="..." />
+            <Image
+              width={200}
+              src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            />
+            {/* <img src={product.image} className="card-img-top" alt="..." /> */}
           </div>
           <div className="col">
             <h5 className="card-title">{product.title}</h5>

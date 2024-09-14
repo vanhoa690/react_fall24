@@ -3,6 +3,10 @@ import { getAllProduct } from "../services/product";
 import toast from "react-hot-toast";
 import { AxiosError } from "axios";
 import { Link } from "react-router-dom";
+import { Card } from "antd";
+import { Col, Row } from "antd";
+
+const { Meta } = Card;
 
 type Product = {
   id: number;
@@ -35,27 +39,21 @@ export default function Homepage() {
         </div>
       )}
       <h1>Homepage</h1>
-      <div className="row">
+      <Row gutter={24}>
         {products.map((product, index) => (
-          <div key={index} className="col mt-4">
-            <div className="card" style={{ width: "18rem" }}>
-              <img
-                src={product.image}
-                className="card-img-top"
-                alt={product.title}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{product.title}</h5>
-                <p className="card-text">{product.description}</p>
-                <p className="card-text">Price: {product.price} VND</p>
-                <Link to={`/product/${product.id}`} className="btn btn-primary">
-                  Detail
-                </Link>
-              </div>
-            </div>
-          </div>
+          <Col className="gutter-row" span={6} key={index}>
+            <Link to={`/product/${product.id}`}>
+              <Card
+                hoverable
+                style={{ width: 240 }}
+                cover={<img alt="example" src={product.image} />}
+              >
+                <Meta title={product.title} description={product.description} />
+              </Card>
+            </Link>
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   );
 }
