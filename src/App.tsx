@@ -5,6 +5,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ClientLayout from "./layouts/ClientLayout";
 // import ClientAntdLayout from "./layouts/ClientAntdLayout";
+import { Toaster } from "react-hot-toast";
+import ProductDetail from "./pages/ProductDetail";
 
 function App() {
   const routeConfig = [
@@ -14,6 +16,7 @@ function App() {
       children: [
         { path: "/", element: <Homepage /> },
         { path: "/about", element: <About /> },
+        { path: "/product/:id", element: <ProductDetail /> },
       ],
     },
     { path: "/login", element: <Login /> },
@@ -22,7 +25,12 @@ function App() {
 
   const routes = useRoutes(routeConfig);
 
-  return <main>{routes}</main>;
+  return (
+    <main>
+      {routes}
+      <Toaster />
+    </main>
+  );
 }
 
 export default App;

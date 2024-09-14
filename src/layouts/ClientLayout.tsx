@@ -5,7 +5,9 @@ export default function ClientLayout() {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="container mt-2">
+        <Outlet />
+      </div>
     </>
   );
 }
