@@ -24,3 +24,11 @@
   "products": []
   }
 - script trong package.json: "server": "json-server db.json"
+
+## ProductDetail
+
+- pages/ProductDetail.tsx
+- route: path, element
+- service: getProductDetail
+- call API
+- Render UI

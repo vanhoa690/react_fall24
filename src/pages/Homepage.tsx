@@ -1,14 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAllProduct } from "../services/product";
 import toast from "react-hot-toast";
-
-type Product = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-};
+import { Link } from "react-router-dom";
+import { Product } from "../types/Product";
 
 export default function Homepage() {
   // state: products
@@ -49,9 +43,9 @@ export default function Homepage() {
                 <h5 className="card-title">{product.title}</h5>
                 <p className="card-text">{product.description}</p>
                 <p className="card-text">Price: {product.price} VND</p>
-                <a href="#" className="btn btn-primary">
+                <Link to={`/product/${product.id}`} className="btn btn-primary">
                   Detail
-                </a>
+                </Link>
               </div>
             </div>
           </div>
