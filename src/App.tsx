@@ -7,6 +7,7 @@ import ClientLayout from "./layouts/ClientLayout";
 import ClientAntdLayout from "./layouts/ClientAntdLayout";
 import { Toaster } from "react-hot-toast";
 import ProductDetail from "./pages/ProductDetail";
+import { RegisterAntd } from "./pages/antd/RegisterAntd";
 
 function App() {
   const routeConfig = [
@@ -25,6 +26,7 @@ function App() {
       children: [
         { path: "", element: <Homepage /> },
         { path: "about", element: <About /> },
+        { path: "register", element: <RegisterAntd /> },
       ],
     },
     { path: "/login", element: <Login /> },
