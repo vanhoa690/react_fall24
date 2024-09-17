@@ -28,5 +28,42 @@
       "price": 111,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
     }
+  ],
+  "users": [
+    {
+      "email": "hoadv21@fpt.edu.vn",
+      "password": "$2a$10$MweuaRlLsqBqos9YZ145zOgJXIU8osexbDb1q7XN43L97Enjnt.Tu",
+      "id": 1
+    },
+    {
+      "email": "hoadv213@fpt.edu.vn",
+      "password": "$2a$10$v98hp2hdRGfdqdZlryf0bulpay9qFamhi7K0vD90XajkYd4sYJgB2",
+      "id": 2
+    },
+    {
+      "email": "hoadv2131@fpt.edu.vn",
+      "password": "$2a$10$qQgYfClla334BoW5kyiwzOe7.4d5JYJE3QV8l7E2aEUAepcRtMXfC",
+      "id": 3
+    },
+    {
+      "email": "5@gmail.com",
+      "password": "$2a$10$PK9ediQQEtEpM15dV690sOM5LIibLPmYSMvM32Zq6JQ.a4Bb97JIy",
+      "id": 4
+    },
+    {
+      "email": "4354345345@gmail.com",
+      "password": "$2a$10$MP8igCKuwMk3e8ASJax.9uYasbPn.ox8LDMVatFdwE/iSX2Pn6hve",
+      "id": 5
+    },
+    {
+      "email": "435345345@gmail.com",
+      "password": "$2a$10$8c0PoTdEEA.GZBC.UUD18u3Sz68y.IqyhfYQBRaWZ7VscHQUfgHh.",
+      "id": 6
+    },
+    {
+      "email": "hoadv2133@fpt.edu.vn",
+      "password": "$2a$10$dbwTn7tOtTmrTSMTOudyl.2nVLRHGSSM7NiOEhk5iaoOHU7h9wEiW",
+      "id": 7
+    }
   ]
 }

@@ -19,7 +19,7 @@ export default function ProductDetail() {
   return (
     <div className="container">
       <h2 className="text-center my-4">Product Detail</h2>
-      {product && (
+      {product && ( // @if
         <div className="row">
           <div className="col">
             <img src={product.image} className="card-img-top" alt="" />

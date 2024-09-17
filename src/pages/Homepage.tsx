@@ -5,11 +5,6 @@ import { Link } from "react-router-dom";
 import { Product } from "../types/Product";
 
 export default function Homepage() {
-  // state: products
-  // call api: axios
-  // show error
-  // show loading
-
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
