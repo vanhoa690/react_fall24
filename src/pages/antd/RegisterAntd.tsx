@@ -1,4 +1,4 @@
-import { Button, Form, Input } from "antd";
+import { Button, Form, FormProps, Input } from "antd";
 import { registerUser, User } from "../../services/auth";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const RegisterAntd = () => {
   const nav = useNavigate();
 
-  const onFinish = (values: any) => {
+  const onFinish: FormProps<User>["onFinish"] = (values) => {
     registerUser(values)
       .then(() => {
         toast.success("Ok Minh dang ky dc roi Yeah !");
