@@ -4,9 +4,9 @@ export function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
+        <Link className="navbar-brand" to="/antd">
+          Antd
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
