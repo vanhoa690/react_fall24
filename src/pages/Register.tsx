@@ -21,7 +21,7 @@ export default function Register() {
   return (
     <div className="container">
       <h1 className="text-center">Register</h1>
-      <AuthForm onSubmit={handleRegister} isRegister={true} />
+      <AuthForm onSubmit={handleRegister} isRegister />
     </div>
   );
 }

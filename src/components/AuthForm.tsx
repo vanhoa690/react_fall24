@@ -17,20 +17,19 @@ export function AuthForm({ isRegister, onSubmit }: AuthForm) {
     <form onSubmit={handleSubmit(onSubmit)}>
       {isRegister && (
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
+          <label htmlFor="username" className="form-label">
             Username
           </label>
           <input
             type="text"
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            id="username"
             {...register("username", {
               required: "Username is required",
             })}
           />
-          {errors?.email && (
-            <small className="text-danger">{errors.email.message}</small>
+          {errors?.username && (
+            <small className="text-danger">{errors.username.message}</small>
           )}
         </div>
       )}
