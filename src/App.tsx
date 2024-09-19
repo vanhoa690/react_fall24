@@ -18,6 +18,8 @@ function App() {
         { path: "/", element: <Homepage /> },
         { path: "/about", element: <About /> },
         { path: "/product/:id", element: <ProductDetail /> },
+        { path: "/register", element: <Register /> },
+        { path: "/login", element: <Login /> },
       ],
     },
     {
@@ -29,8 +31,6 @@ function App() {
         { path: "register", element: <RegisterAntd /> },
       ],
     },
-    { path: "/login", element: <Login /> },
-    { path: "/register", element: <Register /> },
   ];
 
   const routes = useRoutes(routeConfig);
