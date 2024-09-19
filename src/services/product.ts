@@ -1,9 +1,9 @@
-import axios from "axios";
+import { http } from "../config/axios";
 
 export const getAllProduct = () => {
-  return axios.get("http://localhost:3000/products");
+  return http.get("/products");
 };
 
 export const getProductDetail = (id: string) => {
-  return axios.get("http://localhost:3000/products/" + id);
+  return http.get("/products/" + id);
 };

@@ -1,4 +1,4 @@
-import axios from "axios";
+import { http } from "../config/axios";
 
 export type User = {
   username?: string;
@@ -7,9 +7,9 @@ export type User = {
 };
 
 export const registerUser = (data: User) => {
-  return axios.post("http://localhost:3000/register", data);
+  return http.post("/register", data);
 };
 
 export const loginUser = (data: User) => {
-  return axios.post("http://localhost:3000/login", data);
+  return http.post("/login", data);
 };
