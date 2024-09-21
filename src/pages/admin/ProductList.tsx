@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { Product } from "../../types/Product";
-import { getAllProduct } from "../../services/product";
+import { deleteProduct, getAllProduct } from "../../services/product";
 import toast from "react-hot-toast";
+// import { useNavigate } from "react-router-dom";
 
 export default function ProductList() {
+  //   const navigate = useNavigate();
+
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -17,6 +20,17 @@ export default function ProductList() {
       .finally(() => setLoading(false));
   }, []);
 
+  const handleDeleteProduct = (id: number) => {
+    if (window.confirm("Xoa that ko?")) {
+      deleteProduct(id)
+        .then(() => {
+          toast.success(`Delete Product Id: ${id} Successfull`);
+          // navigate(0);
+          location.reload();
+        })
+        .catch((error) => toast.error("Error: " + error.message));
+    }
+  };
   return (
     <div className="container">
       <h1>Admin Product List</h1>
@@ -49,7 +63,12 @@ export default function ProductList() {
               </td>
               <td>{product.description}</td>
               <td>
-                <button className="btn btn-danger">Delete</button>
+                <button
+                  onClick={() => handleDeleteProduct(product.id)}
+                  className="btn btn-danger"
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
