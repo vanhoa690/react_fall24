@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { Breadcrumb, Layout, Menu } from "antd";
+import { Layout, Menu } from "antd";
 
 const { Header, Content, Footer } = Layout;
 
@@ -10,8 +10,8 @@ export default function ClientAntdLayout() {
       label: "Home",
     },
     {
-      key: "about",
-      label: "About",
+      key: "product/list",
+      label: "Product List",
     },
     {
       key: "login",
@@ -42,11 +42,6 @@ export default function ClientAntdLayout() {
         />
       </Header>
       <Content style={{ padding: "0 48px" }}>
-        <Breadcrumb style={{ margin: "16px 0" }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
         <Outlet />
       </Content>
       <Footer style={{ textAlign: "center" }}>
