@@ -21,6 +21,10 @@ export default function ClientAntdLayout() {
       key: "register",
       label: "Register",
     },
+    {
+      key: "admin/product/list",
+      label: "Admin Product List",
+    },
   ];
 
   const nav = useNavigate();

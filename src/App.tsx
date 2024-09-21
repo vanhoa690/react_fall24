@@ -10,15 +10,14 @@ import ProductDetail from "./pages/ProductDetail";
 import { RegisterAntd } from "./pages/antd/RegisterAntd";
 import AdminLayout from "./layouts/AdminLayout";
 import ProductList from "./pages/admin/ProductList";
+import AdminProductListAntd from "./pages/antd/AdminProductListAntd";
 
 function App() {
   const routeConfig = [
     {
       path: "admin",
       element: <AdminLayout />,
-      children: [
-        { path: "product/list", element: <ProductList /> }
-      ],
+      children: [{ path: "product/list", element: <ProductList /> }],
     },
     {
       path: "",
@@ -38,6 +37,7 @@ function App() {
         { path: "", element: <Homepage /> },
         { path: "about", element: <About /> },
         { path: "register", element: <RegisterAntd /> },
+        { path: "admin/product/list", element: <AdminProductListAntd /> },
       ],
     },
   ];
