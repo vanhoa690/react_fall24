@@ -1,8 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 export default function AdminLayout() {
-  // token: private routes
-  // chen sidebar trong layout
+  const token = localStorage.getItem("token");
+  if (!token) {
+    return <Navigate to="/login" replace={true} />;
+  }
   return (
     <>
       <div className="container">
