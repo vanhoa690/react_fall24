@@ -6,6 +6,14 @@
       "description": "Mo ta san pham a",
       "price": 111,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
+    },
+    {
+      "title": "ten san pham",
+      "id": 13
+    },
+    {
+      "title": "san pham 2",
+      "id": 14
     }
   ],
   "users": [

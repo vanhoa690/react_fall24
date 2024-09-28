@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Product } from "../../types/Product";
 import { deleteProduct, getAllProduct } from "../../services/product";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 export default function ProductList() {
@@ -34,6 +35,9 @@ export default function ProductList() {
   return (
     <div className="container">
       <h1>Admin Product List</h1>
+      <Link to="/admin/product/add">
+        <button className="btn btn-primary">Add Product</button>
+      </Link>
       {loading && (
         <div className="d-flex justify-content-center">
           <div className="spinner-border" role="status">

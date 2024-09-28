@@ -11,13 +11,23 @@ import { RegisterAntd } from "./pages/antd/RegisterAntd";
 import AdminLayout from "./layouts/AdminLayout";
 import ProductList from "./pages/admin/ProductList";
 import AdminProductListAntd from "./pages/antd/AdminProductListAntd";
+import ProductAdd from "./pages/admin/ProductAdd";
 
 function App() {
   const routeConfig = [
     {
       path: "admin",
       element: <AdminLayout />,
-      children: [{ path: "product/list", element: <ProductList /> }],
+      children: [
+        {
+          path: "product/list",
+          element: <ProductList />,
+        },
+        {
+          path: "product/add",
+          element: <ProductAdd />,
+        },
+      ],
     },
     {
       path: "",
