@@ -2,15 +2,7 @@ import { SubmitHandler } from "react-hook-form";
 import { addProduct } from "../../services/product";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { ProductForm } from "../../components/ProductForm";
-
-export type Inputs = {
-  title: string;
-  // image
-  // price
-  // description
-  // category
-};
+import { Inputs, ProductForm } from "../../components/ProductForm";
 
 export default function ProductAdd() {
   const nav = useNavigate();

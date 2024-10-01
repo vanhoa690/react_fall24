@@ -1,9 +1,8 @@
 import { SubmitHandler } from "react-hook-form";
-import { Inputs } from "./ProductAdd";
 import { useNavigate, useParams } from "react-router-dom";
 import { editProductDetail } from "../../services/product";
 import toast from "react-hot-toast";
-import { ProductForm } from "../../components/ProductForm";
+import { Inputs, ProductForm } from "../../components/ProductForm";
 
 export default function ProductEdit() {
   const { id } = useParams();
