@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 type Inputs = {
   title: string;
+  // image
+  // price
+  // description
+  // category
 };
 
 export default function ProductAdd() {

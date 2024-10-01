@@ -2,6 +2,10 @@ import { http } from "../config/axios";
 
 type Product = {
   title: string;
+  // image
+  // price
+  // description
+  // category
 };
 
 export const getAllProduct = () => {
