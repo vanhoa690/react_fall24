@@ -12,6 +12,7 @@ import AdminLayout from "./layouts/AdminLayout";
 import ProductList from "./pages/admin/ProductList";
 import AdminProductListAntd from "./pages/antd/AdminProductListAntd";
 import ProductAdd from "./pages/admin/ProductAdd";
+import ProductEdit from "./pages/admin/ProductEdit";
 
 function App() {
   const routeConfig = [
@@ -26,6 +27,10 @@ function App() {
         {
           path: "product/add",
           element: <ProductAdd />,
+        },
+        {
+          path: "product/edit/:id",
+          element: <ProductEdit />,
         },
       ],
     },

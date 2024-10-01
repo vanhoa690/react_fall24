@@ -1,30 +1,34 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { addProduct } from "../../services/product";
+import { Inputs } from "./ProductAdd";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { editProductDetail, getProductDetail } from "../../services/product";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
-export type Inputs = {
-  title: string;
-  // image
-  // price
-  // description
-  // category
-};
-
-export default function ProductAdd() {
+export default function ProductEdit() {
+  const { id } = useParams();
+  const nav = useNavigate();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Inputs>();
 
-  const nav = useNavigate();
+  useEffect(() => {
+    if (!id) return;
+    getProductDetail(id)
+      .then(({ data }) => {
+        reset(data);
+      })
+      .catch(() => toast.error("Error"));
+  }, []);
 
-  const handleAddProduct: SubmitHandler<Inputs> = (values) => {
-    // call api
-    addProduct(values)
-      .then(() => {
-        toast.success("Add Product Successfull");
+  const handleEditProduct: SubmitHandler<Inputs> = (values) => {
+    if (!id) return;
+    editProductDetail(id, values)
+      .then((data) => {
+        toast.success("Edit Success");
         nav("/admin/product/list");
       })
       .catch(() => toast.error("Error"));
@@ -32,8 +36,8 @@ export default function ProductAdd() {
 
   return (
     <div className="container">
-      <h1>Product Add</h1>
-      <form onSubmit={handleSubmit(handleAddProduct)}>
+      <h1>Product Edit</h1>
+      <form onSubmit={handleSubmit(handleEditProduct)}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Title

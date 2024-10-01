@@ -67,6 +67,9 @@ export default function ProductList() {
               </td>
               <td>{product.description}</td>
               <td>
+                <Link to={`/admin/product/edit/${product.id}`}>
+                  <button className="btn btn-info">Edit</button>
+                </Link>
                 <button
                   onClick={() => handleDeleteProduct(product.id)}
                   className="btn btn-danger"

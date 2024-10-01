@@ -23,3 +23,7 @@ export const deleteProduct = (id: number) => {
 export const addProduct = (data: Product) => {
   return http.post("/products", data);
 };
+
+export const editProductDetail = (id: string, data: Product) => {
+  return http.put("/products/" + id, data);
+};

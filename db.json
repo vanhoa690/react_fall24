@@ -2,18 +2,14 @@
   "products": [
     {
       "id": 12,
-      "title": "San pham A",
+      "title": "San pham C",
       "description": "Mo ta san pham a",
       "price": 111,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
     },
     {
-      "title": "ten san pham",
+      "title": "san pham D",
       "id": 13
-    },
-    {
-      "title": "san pham 2",
-      "id": 14
     }
   ],
   "users": [
