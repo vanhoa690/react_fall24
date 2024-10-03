@@ -1,22 +1,8 @@
-import { SubmitHandler } from "react-hook-form";
-import { registerUser, User } from "../services/auth";
-import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 import { AuthForm } from "../components/AuthForm";
+import { useAuth } from "../hooks/useAuth";
 
 export default function Register() {
-  const nav = useNavigate();
-
-  const handleRegister: SubmitHandler<User> = (values) => {
-    registerUser(values)
-      .then(() => {
-        toast.success("Ok Minh dang ky dc roi Yeah !");
-        nav("/login");
-      })
-      .catch((error) => {
-        toast.error("Error: " + error.message);
-      });
-  };
+  const { handleRegister } = useAuth();
 
   return (
     <div className="container">
