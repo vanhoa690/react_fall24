@@ -6,20 +6,6 @@
       "description": "Mo ta san pham a",
       "price": 111,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
-    },
-    {
-      "title": "san pham D",
-      "id": 13
-    },
-    {
-      "title": "san pham edit",
-      "id": 14
-    },
-    {
-      "title": "PC One",
-      "catetory": "",
-      "category": "3",
-      "id": 15
     }
   ],
   "users": [
@@ -33,6 +19,23 @@
       "password": "$2a$10$7UI1aMb12Tz/ioqZzPzCmO/dWWmOXR0hmS8osh2jEu/.a6cAhy/12",
       "username": "hoadv",
       "id": 2
+    }
+  ],
+  "carts": [
+    {
+      "product": {
+        "id": 12,
+        "title": "San pham D",
+        "description": "Mo ta san pham a",
+        "price": 111,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
+      },
+      "quantity": 1,
+      "user": {
+        "email": "hoadv21@fpt.edu.vn",
+        "id": 1
+      },
+      "id": 1
     }
   ]
 }

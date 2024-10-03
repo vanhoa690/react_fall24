@@ -1,21 +1,9 @@
-import { deleteProduct } from "../../services/product";
-import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { useProduct } from "../../hooks/useProduct";
 
 export default function ProductList() {
-  const { products, loading } = useProduct();
+  const { products, loading, handleDeleteProduct } = useProduct();
 
-  const handleDeleteProduct = (id: number) => {
-    if (window.confirm("Xoa that ko?")) {
-      deleteProduct(id)
-        .then(() => {
-          toast.success(`Delete Product Id: ${id} Successfull`);
-          location.reload();
-        })
-        .catch((error) => toast.error("Error: " + error.message));
-    }
-  };
   return (
     <div className="container">
       <h1>Admin Product List</h1>

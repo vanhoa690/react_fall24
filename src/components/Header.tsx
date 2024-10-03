@@ -31,8 +31,8 @@ export function Header() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                About
+              <Link className="nav-link" to="/carts">
+                Cart
               </Link>
             </li>
             <li className="nav-item">

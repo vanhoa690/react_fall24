@@ -11,6 +11,7 @@ export const useAuth = () => {
       .then(({ data }) => {
         toast.success("Ok Minh dang nhap dc roi Yeah !");
         localStorage.setItem("token", data.accessToken);
+        localStorage.setItem("user", JSON.stringify(data.user));
         nav("/");
       })
       .catch((error) => {

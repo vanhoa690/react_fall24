@@ -1,21 +1,8 @@
-import { SubmitHandler } from "react-hook-form";
-import { addProduct } from "../../services/product";
-import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
-import { Inputs, ProductForm } from "../../components/ProductForm";
+import { ProductForm } from "../../components/ProductForm";
+import { useProduct } from "../../hooks/useProduct";
 
 export default function ProductAdd() {
-  const nav = useNavigate();
-
-  const handleAddProduct: SubmitHandler<Inputs> = (values) => {
-    // call api
-    addProduct(values)
-      .then(() => {
-        toast.success("Add Product Successfull");
-        nav("/admin/product/list");
-      })
-      .catch(() => toast.error("Error"));
-  };
+  const { handleAddProduct } = useProduct();
 
   return (
     <div className="container">

@@ -13,6 +13,7 @@ import ProductList from "./pages/admin/ProductList";
 import AdminProductListAntd from "./pages/antd/AdminProductListAntd";
 import ProductAdd from "./pages/admin/ProductAdd";
 import ProductEdit from "./pages/admin/ProductEdit";
+import Cart from "./pages/Cart";
 
 function App() {
   const routeConfig = [
@@ -43,6 +44,7 @@ function App() {
         { path: "product/:id", element: <ProductDetail /> },
         { path: "register", element: <Register /> },
         { path: "login", element: <Login /> },
+        { path: "carts", element: <Cart /> },
       ],
     },
     {
