@@ -1,32 +1,16 @@
-import { useEffect, useState } from "react";
-import { Product } from "../../types/Product";
-import { deleteProduct, getAllProduct } from "../../services/product";
+import { deleteProduct } from "../../services/product";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
+import { useProduct } from "../../hooks/useProduct";
 
 export default function ProductList() {
-  //   const navigate = useNavigate();
-
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    getAllProduct()
-      .then(({ data }) => {
-        toast.success("oh Yeah");
-        setProducts(data);
-      })
-      .catch((error) => toast.error("Error: " + error.message))
-      .finally(() => setLoading(false));
-  }, []);
+  const { products, loading } = useProduct();
 
   const handleDeleteProduct = (id: number) => {
     if (window.confirm("Xoa that ko?")) {
       deleteProduct(id)
         .then(() => {
           toast.success(`Delete Product Id: ${id} Successfull`);
-          // navigate(0);
           location.reload();
         })
         .catch((error) => toast.error("Error: " + error.message));

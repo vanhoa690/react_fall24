@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react";
-import { getAllProduct } from "../services/product";
-import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { Product } from "../types/Product";
+import { useProduct } from "../hooks/useProduct";
 
 export default function Homepage() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    getAllProduct()
-      .then(({ data }) => {
-        toast.success("oh Yeah");
-        setProducts(data);
-      })
-      .catch((error) => toast.error("Error: " + error.message))
-      .finally(() => setLoading(false));
-  }, []);
+  const { loading, products } = useProduct();
 
   return (
     <div className="container">
@@ -28,7 +14,7 @@ export default function Homepage() {
           </div>
         </div>
       )}
-      {/* @for track item.id - map key=product.id (index) */}
+
       <div className="row">
         {products.map((product, index) => (
           <div key={index} className="col mt-2">
