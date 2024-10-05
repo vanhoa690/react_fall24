@@ -3,17 +3,20 @@ import { useParams } from "react-router-dom";
 import { getProductDetail } from "../services/product";
 import { Product } from "../types/Product";
 import toast from "react-hot-toast";
+import { useLoading } from "../context/loading";
 
 export default function ProductDetail() {
   const { id } = useParams();
-
+  const { setLoading } = useLoading();
   const [product, setProduct] = useState<Product>();
 
   useEffect(() => {
     if (!id) return;
+    setLoading(true);
     getProductDetail(id)
       .then(({ data }) => setProduct(data))
-      .catch((error) => toast.error("Error: " + error.message));
+      .catch((error) => toast.error("Error: " + error.message))
+      .finally(() => setLoading(false));
   }, [id]);
 
   return (

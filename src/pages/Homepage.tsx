@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { useProduct } from "../hooks/useProduct";
+import { useLoading } from "../context/loading";
 
 export default function Homepage() {
-  const { loading, products } = useProduct();
+  const { products } = useProduct();
+  const { isLoading } = useLoading();
 
   return (
     <div className="container">
       <h1>Homepage</h1>
-      {loading && (
+      {isLoading && (
         <div className="d-flex justify-content-center">
           <div className="spinner-border" role="status">
             <span className="visually-hidden">Loading...</span>

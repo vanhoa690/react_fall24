@@ -13,6 +13,7 @@ import ProductList from "./pages/admin/ProductList";
 import AdminProductListAntd from "./pages/antd/AdminProductListAntd";
 import ProductAdd from "./pages/admin/ProductAdd";
 import ProductEdit from "./pages/admin/ProductEdit";
+import { LoadingProvider } from "./context/loading";
 
 function App() {
   const routeConfig = [
@@ -61,7 +62,9 @@ function App() {
 
   return (
     <main>
-      {routes}
+      <LoadingProvider>
+        {routes}
+      </LoadingProvider>
       <Toaster />
     </main>
   );

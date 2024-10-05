@@ -2,9 +2,11 @@ import { deleteProduct } from "../../services/product";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { useProduct } from "../../hooks/useProduct";
+import { useLoading } from "../../context/loading";
 
 export default function ProductList() {
-  const { products, loading } = useProduct();
+  const { products } = useProduct();
+  const { isLoading } = useLoading();
 
   const handleDeleteProduct = (id: number) => {
     if (window.confirm("Xoa that ko?")) {
@@ -22,7 +24,7 @@ export default function ProductList() {
       <Link to="/admin/product/add">
         <button className="btn btn-primary">Add Product</button>
       </Link>
-      {loading && (
+      {isLoading && (
         <div className="d-flex justify-content-center">
           <div className="spinner-border" role="status">
             <span className="visually-hidden">Loading...</span>

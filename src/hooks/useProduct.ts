@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Product } from "../types/Product";
 import { getAllProduct } from "../services/product";
 import toast from "react-hot-toast";
+import { useLoading } from "../context/loading";
 
 export const useProduct = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const { setLoading } = useLoading();
 
   useEffect(() => {
+    setLoading(true);
     getAllProduct()
       .then(({ data }) => {
         toast.success("oh Yeah");
@@ -19,6 +21,5 @@ export const useProduct = () => {
 
   return {
     products,
-    loading,
   };
 };
