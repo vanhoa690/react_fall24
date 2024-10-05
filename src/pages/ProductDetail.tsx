@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
-import { getAllProduct, getProductDetail } from "../services/product";
+import { getAllProduct, getProductDetail, Product } from "../services/product";
 import toast from "react-hot-toast";
 import { AxiosError } from "axios";
 import { useParams } from "react-router-dom";
 import { Image } from "antd";
-
-type Product = {
-  id: string;
-  title: string;
-  image: string;
-  price: number;
-  description: string;
-};
+import { useProductCart } from "../hooks/useProductCart";
 
 export default function ProductDetail() {
   const { id } = useParams();
+  const { addProductToCart } = useProductCart();
+
   const [product, setProduct] = useState<Product>();
 
   useEffect(() => {
@@ -25,6 +20,10 @@ export default function ProductDetail() {
         toast.error("Error: " + (e as AxiosError).message);
       });
   }, [id]);
+
+  const handleAddCart = (product: Product) => {
+    addProductToCart({ product, quantity: 1 });
+  };
 
   return (
     <div className="container">
@@ -42,6 +41,12 @@ export default function ProductDetail() {
             <h5 className="card-title">{product.title}</h5>
             <p className="card-text">{product.description}</p>
             <p className="card-text">Price: {product.price} VND</p>
+            <button
+              onClick={() => handleAddCart(product)}
+              className="btn-primary btn"
+            >
+              Add To Cart
+            </button>
           </div>
         </div>
       )}

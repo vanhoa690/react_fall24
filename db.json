@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 11,
+      "id": 22,
       "title": "San pham A",
       "description": "Mo ta san pham a",
       "price": 111,
@@ -23,6 +23,13 @@
       "email": "admin212@gmail.com",
       "password": "$2a$10$2H2RDC.VJ957/AuqRAf6A.CtNuYiw9A6/zKPes6UAJdD3V/njkWGm",
       "id": 3
+    }
+  ],
+  "carts": [
+    {
+      "products": [],
+      "userId": 1,
+      "id": 1
     }
   ]
 }

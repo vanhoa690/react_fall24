@@ -1,5 +1,11 @@
 import axios from "axios";
-
+export type Product = {
+  id: number;
+  title: string;
+  image: string;
+  price: number;
+  description: string;
+};
 export const getAllProduct = () => {
   return axios.get("http://localhost:3000/products");
 };

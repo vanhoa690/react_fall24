@@ -11,6 +11,8 @@ import RegisterAntd from "./pages/antd/RegisterAntd";
 import AdminLayout from "./layouts/AdminLayout";
 import ProducList from "./pages/admin/ProductList";
 import ProducListAntd from "./pages/antd/admin/ProductListAntd";
+import CartList from "./pages/Cart";
+import { CartProvider } from "./context/cart";
 
 function App() {
   const routeConfig = [
@@ -28,6 +30,7 @@ function App() {
         { path: "/product/:id", element: <ProductDetail /> },
         { path: "/login", element: <Login /> },
         { path: "/register", element: <Register /> },
+        { path: "/carts", element: <CartList /> },
       ],
     },
     {
@@ -47,7 +50,7 @@ function App() {
 
   return (
     <main>
-      {routes}
+      <CartProvider>{routes}</CartProvider>
       <Toaster />
     </main>
   );
