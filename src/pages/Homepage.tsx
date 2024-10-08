@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useProduct } from "../hooks/useProduct";
-import { useLoading } from "../context/loading";
+import { useSelector } from "react-redux";
+// import { useLoading } from "../context/loading";
 
 export default function Homepage() {
   const { products } = useProduct();
-  const { isLoading } = useLoading();
+  // const { isLoading } = useLoading();
+  const isLoading = useSelector((state: any) => state.loading.isLoading);
 
   return (
     <div className="container">

@@ -14,6 +14,8 @@ import AdminProductListAntd from "./pages/antd/AdminProductListAntd";
 import ProductAdd from "./pages/admin/ProductAdd";
 import ProductEdit from "./pages/admin/ProductEdit";
 import { LoadingProvider } from "./context/loading";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   const routeConfig = [
@@ -63,7 +65,7 @@ function App() {
   return (
     <main>
       <LoadingProvider>
-        {routes}
+        <Provider store={store}>{routes}</Provider>
       </LoadingProvider>
       <Toaster />
     </main>
