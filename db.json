@@ -6,6 +6,20 @@
       "description": "Mo ta san pham a",
       "price": 111,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
+    },
+    {
+      "id": 33,
+      "title": "San pham B",
+      "description": "Mo ta san pham a",
+      "price": 111,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
+    },
+    {
+      "id": 44,
+      "title": "San pham D",
+      "description": "Mo ta san pham a",
+      "price": 111,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
     }
   ],
   "users": [
@@ -27,7 +41,28 @@
   ],
   "carts": [
     {
-      "products": [],
+      "products": [
+        {
+          "product": {
+            "id": 22,
+            "title": "San pham A",
+            "description": "Mo ta san pham a",
+            "price": 111,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
+          },
+          "quantity": 19
+        },
+        {
+          "product": {
+            "id": 33,
+            "title": "San pham B",
+            "description": "Mo ta san pham a",
+            "price": 111,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2RWQ0h1LZxZHLad9eB0JVgBlzqEPPrZVeQQ&s"
+          },
+          "quantity": 5
+        }
+      ],
       "userId": 1,
       "id": 1
     }

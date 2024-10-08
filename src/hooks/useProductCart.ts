@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useCart } from "../context/cart";
 import {
   addToCart,
@@ -51,6 +52,7 @@ export const useProductCart = () => {
         });
       }
       await getCartInfo();
+      toast.success("Add to Cart Ok");
     } catch (error) {
       console.log(error);
     }
